@@ -56,7 +56,7 @@ module Spree
       end
 
       def variant_vat_rates
-        @variant_vat_rates ||= variant.tax_category.tax_rates.included_in_price
+        @variant_vat_rates ||= variant.tax_category.tax_rates.where(included_in_price: false)
       end
     end
   end
